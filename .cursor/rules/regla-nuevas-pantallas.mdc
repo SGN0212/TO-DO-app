@@ -1,0 +1,20 @@
+---
+description: Template para solicitudes de nuevas pantallas usando MVVM (sin LiveData, con listas comunes o mutables)
+rule_type: auto
+---
+When I @request-new-screen {screenName}, follow this pattern:
+1. Crea el layout XML con ViewBinding habilitado (`buildFeatures.viewBinding = true` en `build.gradle`).
+2. Generá un Fragment (o Activity) llamado `{screenName}Fragment` con el layout inflado usando ViewBinding.
+3. Creá un ViewModel llamado `{screenName}ViewModel`, y usá variables comunes o listas mutables para manejar el estado de UI, por ejemplo:
+   - `val items = mutableListOf<Task>()`
+   - `var selectedCategory: String = ""`
+4. La UI debe obtener los datos directamente desde el ViewModel sin LiveData ni StateFlow, por ejemplo llamando funciones o accediendo a las listas.
+5. Si necesitás persistencia o lógica más compleja, agregá un repositorio separado (`{screenName}Repository`) y usalo desde el ViewModel.
+6. La navegación entre pantallas debe seguir el Navigation Component si está habilitado.
+7. Separar claramente las responsabilidades: la UI solo muestra datos y responde a eventos, el ViewModel contiene la lógica de negocio.
+
+Opcional:
+- Si se necesita pasar datos entre pantallas, usá `SafeArgs` o `Bundle` simple.
+- Si usás `notifyDataSetChanged()`, asegurate de actualizar correctamente las listas en el ViewModel.
+
+

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AppComidaa</string>
+    <string name="HintLoginU">User</string>
+    <string name="HintLoginP">Password</string>
+    <string name="textButtonLogin">Ingresar</string>
+    <string name="Category_Fragment_Home">Categorias</string>
+    <string name="Task_Fragment_Home">Tareas</string>
+    <string name="item_task_category">Categoria</string>
+    <string name="Healt">Salud</string>
+    <string name="House">Hogar</string>
+    <string name="Other">Otros</string>
+    <string name="Study">Estudio</string>
+    <string name="Work">Trabajo</string>
+    <string name="HintAddTask">Nueva tarea</string>
+    <string name="createTask">Crear Tarea</string>
+    <string name="Favoritos">Favoritos</string>
+
+    <!--
+    <string name=""></string>
+    -->
+</resources>
